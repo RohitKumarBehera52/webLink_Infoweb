@@ -14,16 +14,20 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('name');
             
-            $table->string('google_id');
             $table->string('email')->unique();
+            $table->string('avatar')->default('default.jpg');
+            $table->integer('tinUsertype')->default(2);
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('bitDeletedFlag')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

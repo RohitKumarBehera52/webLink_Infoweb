@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('slider_partOne')
-
+<br>
+<br>
+<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12">
@@ -62,7 +64,7 @@
   </a> -->
 
 
-@yield('FAQ')
+@yield('serv')
 </div>
 </div>
 </div>

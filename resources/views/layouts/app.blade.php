@@ -32,7 +32,7 @@
 </head>
 <body>
     <div id="app" >
-        <nav class="navbar navbar-expand-md col-sm-12   bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md col-sm-12 fixed-top   bg-white shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand " style="color:rgb(45, 43, 148); margin-left: 150px" href="{{ url('/') }}">
                     <img  src="image/logo.png" alt="Weblink" style="width: 10%;height: 10%;border-right: 1px solid blue;">
@@ -59,7 +59,7 @@
                             
                             
                                 <li class="nav-item">
-                                    <a class="nav-link" type="button" style="color: purple;padding-right: 20px ;" ><b>{{ __('Cover Area') }}</b></a>
+                                    <a class="nav-link" type="button" id="CovAreaBtn" style="color: purple;padding-right: 20px ;" ><b>{{ __('Cover Area') }}</b></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="faqBtn" type="button"  style="color: purple;padding-right: 20px ;" ><b>{{ __('FAQ') }}</b></a>
@@ -115,19 +115,17 @@
                                            
                                             <div class="form-group">
                                             <label  style="color:rgb(179, 50, 11);">Office contact 1:</label><br>
-                                            <label  style="color:rgb(45, 43, 148);"><b>+91 9769217768</b></label>
-                                            <span style="padding-left: 50px;"><button  style="border-radius: 50px;width: 150px ;background-color:rgb(45, 43, 148);color: white;  " >Copy this no . <i class="fa fa-copy">    </i></button>
+                                            <label  id="lal1" style="color:rgb(45, 43, 148);"><b>+91 9769217768</b></label>
+                                            <span style="padding-left: 50px;"><button  onclick="copyToClipboard('#lal1')" style="border-radius: 50px;width: 150px ;background-color:rgb(45, 43, 148);color: white;  " >Copy this no . <i class="fa fa-copy">    </i></button>
                                             </span>
 
                                             <hr>
                                               <label  style="color:rgb(179, 50, 11);">Office contact 1:</label><br>
-                                            <label style="color:rgb(45, 43, 148);"><b>+91 9769217760</b></label>
-                                            <span style="padding-left: 50px;"><button id="copyButton" style="border-radius: 50px;width: 150px ;background-color:rgb(45, 43, 148);color: white; " onclick="myCopy('secondNo')">Copy this no . <i class="fa fa-copy">    </i></button>
+                                            <label id="lal2" style="color:rgb(45, 43, 148);"><b>+91 9769217760</b></label>
+                                            <span style="padding-left: 50px;"><button  onclick="copyToClipboard('#lal2')" style="border-radius: 50px;width: 150px ;background-color:rgb(45, 43, 148);color: white; " >Copy this no . <i class="fa fa-copy">    </i></button>
                                             </span>
 
-                                                <input type="text" value="9769217768" name="firstNo" id="firstNo" style="display: none;">
-                                                <input type="text" value="9769217760" name="secondNo" id="secondNo" style="display: none;">
-
+                                                
                                                </div>
                                                
                                            

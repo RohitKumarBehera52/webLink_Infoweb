@@ -1,8 +1,11 @@
-@extends('website.Slider_partOne')
+@extends('website.services')
 
-@section('FAQ')
-<hr>
+@section('Features')
+
 <div id="faqDiv">
+	<br>
+<hr>
+<br>
 <div class="row h-100 justify-content-center align-items-center">
 	<h4 class=" text-white text-center" style="background-color:green;border-radius: 20px;border:solid 2px; width: 20%">Satisfied Customers</h4>
 	
@@ -83,6 +86,8 @@
 		</div>
 
 	</div>
+	<br>
+	<br>
 	</div>
 
 @yield('Login_page')

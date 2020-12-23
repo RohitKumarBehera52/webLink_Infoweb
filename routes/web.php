@@ -17,29 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::match(['get','post'],'/Admin/{controller}/{action?}/{params?}', function ($controller, $action='index', $params='') { 
-    $params = explode('/', $params);
-    $app = app();
-    
-    if(strpos($controller,'-') !==false){
-
-        $strControllerName = implode('', array_map('ucwords', explode('-',$controller)));
-
-    }else{
-        $strControllerName = ucwords($controller);
-    }
-
-    $objController = $app->make("\App\Http\Controllers\Admin\\".$strControllerName.'Controller' );
-
-     // if(!route_access_allowed($controller, $action)){
-     //     return "You don't have permission to access this page"; 
-     // }
-
-    return $objController->callAction($action, $params);
-    
-})->where('params', '[A-Za-z0-9/]+');//->middleware('checkadminuser');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Route::match(['get','post'],'/Profile/');
+
+//profile view page route
+//Route:: get('/profile' , 'HomeController@profile');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profile']);
+
+//to upload profile pic
+Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'update_avatar']);
+//Route::post('/profile' , 'UserController@update_avatar');

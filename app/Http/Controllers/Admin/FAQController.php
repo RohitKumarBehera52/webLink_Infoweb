@@ -11,6 +11,7 @@ class FAQController extends BaseController
 {
     public function index()
     {
+    	echo "dsdsd";exit();
     	return view("admin.faq");
     }
 }
